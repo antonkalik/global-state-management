@@ -14,31 +14,27 @@ function App() {
       <button
         onClick={() =>
           setState((prevStore) => {
-            const newShare = {
-              symbol: "XRP",
-              price: 1.27472,
-            };
-            const share = prevStore.details.shares.find(
+            const newShare = { symbol: "XRP", price: 1.27472 };
+            const shareExists = prevStore.details.shares.some(
               (share) => share.symbol === newShare.symbol,
             );
-            if (!share) {
-              return {
-                ...prevStore,
-                details: {
-                  ...prevStore.details,
-                  shares: [...prevStore.details.shares, newShare],
-                },
-              };
-            } else {
-              return prevStore;
-            }
+            return shareExists
+              ? prevStore
+              : {
+                  ...prevStore,
+                  details: {
+                    ...prevStore.details,
+                    shares: [...prevStore.details.shares, newShare],
+                  },
+                };
           })
         }
       >
-        Update Shares From App
+        Add Share From App Component
       </button>
       <Footer />
     </div>
   );
 }
+
 export default App;
