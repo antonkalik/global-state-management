@@ -7,7 +7,7 @@ export const Footer = () => {
   return (
     <div className="footer">
       <p>Footer</p>
-      <p>Name: {status}</p>
+      <p>Status: {status}</p>
     </div>
   );
 };
