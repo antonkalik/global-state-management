@@ -1,8 +1,8 @@
 import { useSelector } from "../../store";
 
 export const Footer = () => {
-  console.log("Footer updated");
   const status = useSelector((state) => state.status);
+  console.log("Footer updated");
 
   return (
     <div className="footer">
