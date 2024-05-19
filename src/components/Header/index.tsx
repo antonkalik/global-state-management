@@ -8,13 +8,11 @@ export const Header = () => {
       <p>Header</p>
       <button
         onClick={() =>
-          setState((prevStore) => {
-            return {
-              ...prevStore,
-              name: "Michael",
-              age: 99,
-            };
-          })
+          setState((prevStore) => ({
+            ...prevStore,
+            name: "Michael",
+            age: 99,
+          }))
         }
       >
         Update Name And Age from Header
